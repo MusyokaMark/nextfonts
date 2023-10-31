@@ -10,7 +10,6 @@ const poppins = Poppins({
 });
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  display: "swap",
   variable: "--font-roboto-mono",
 })
 const agbalumo = Agbalumo({
