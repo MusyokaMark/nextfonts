@@ -1,8 +1,28 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Poppins, Roboto_Mono, Agbalumo, Kenia } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: "--inter" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--poppins",
+  weight: ["100", "400", "500", "600"]
+});
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto-mono",
+})
+const agbalumo = Agbalumo({
+  subsets: ["latin"],
+  variable: "--agbalumo",
+  weight: ["400"],
+});
+const kenia = Kenia({
+  subsets: ["latin"],
+  variable: "--kenia",
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={` ${inter.variable} ${poppins.variable} ${robotoMono.variable} ${agbalumo.variable} ${kenia.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }
